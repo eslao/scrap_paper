@@ -149,8 +149,499 @@ please follow links for the most up-to-date details.
 | :--------------- | :-------------- |
 | Involved Classes                   |
 | **bf:Note** <br /> Label: Note <br /> URI: http://id.loc.gov/ontologies/bibframe/Note <br /> Definition: Information, usually in textual form, on attributes of a resource or some aspect of a resource. <br /> SubClass Of: http://www.w3.org/2000/01/rdfschema# <br /> Used with: http://id.loc.gov/ontologies/bibframe/note  <br />  | **oa:Annotation** <br /> URI: http://www.w3.org/ns/oa#Annotation <br /> Required Predicates: oa:hasTarget, rdf:type <br /> Recommended Predicates: oa:hasBody, oa:motivatedBy, dcterms:creator, dcterms:created <br /> Other Predicates: oa:bodyValue, oa:styledBy, dcterms:issued, as:generator |
+bf:Summary
+Label: Summary
+URI:
+http://id.loc.gov/ontologies/bibframe/Summary
+Definition: Description of the content of a
+resource, such as an abstract, summary, etc..
+SubClass Of: http://www.w3.org/2000/01/rdfschema#
+Resource
+Used with:
+http://id.loc.gov/ontologies/bibframe/summary
+|
+bib:summarizing (Named Individual of
+oa:Motivation)
+oa:describing > bib:summarizing
+|
+|
+bf:TableOfContents
+Label: Table of contents
+URI:
+http://id.loc.gov/ontologies/bibframe/TableOfCo
+ntents
+Definition: Table of contents of a resource.
+SubClass Of: http://www.w3.org/2000/01/rdfschema#
+Resource
+Used with:
+http://id.loc.gov/ontologies/bibframe/tableOfCon
+tents
+|
+bib:specifyingContents (Named
+Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingContents
+bib:linkingTableOfContents (Named
+Individual of oa:Motivation)
+oa:linking > bib:linkingTableOfContents
+|
+|
+bf:Review
+Label: Review
+URI:
+http://id.loc.gov/ontologies/bibframe/Review
+Definition: Review of a resource
+SubClass Of: http://www.w3.org/2000/01/rdfschema#
+Resource
+Used with: bf:review
+|
+bib:reviewing (Named Individual of
+oa:Motivation)
+oa:assessing > bib:reviewing
+|
+|
 
+|
+oa:Motivation
+IRI: http://www.w3.org/ns/oa#Motivation
+Sub Class Of: skos:Concept
+Range Of: oa:motivatedBy, oa:hasPurpose
+|
+|
+ 
+|
+oa:TextualBody
+IRI: http://www.w3.org/ns/oa#TextualBody
+Equivalent Classes: as:Note
+Required Predicates: rdf:value
+Recommended Predicates: dc:format,
+dc:language, rdf:type
+|
+|
+Involved Properties
+|
+|
+bf:note
+Label: Note
+URI: http://id.loc.gov/ontologies/bibframe/note
+Definition: General textual information relating
+to a resource, such as Information about a
+specific copy of a resource or information about
+a particular attribute of a resource.
+Comment: Used with Unspecified
+Range:
+http://id.loc.gov/ontologies/bibframe/Note
+|
+bib:isTargetOf
+Definition: The relationship between a
+Target and an Annotation
+oa:hasTarget
+IRI: http://www.w3.org/ns/oa#hasTarget
+Definition: The relationship between an
+Annotation and its Target.
+Domain: oa:Annotation
+|
+|
+bf:noteType
+Label: Note type
+URI:
+http://id.loc.gov/ontologies/bibframe/noteType
+Definition: Type of note
+Used with:
+http://id.loc.gov/ontologies/bibframe/Note
+Range: Literal
+|
 
+|
+|
+
+|
+oa:motivatedBy
+IRI: http://www.w3.org/ns/oa#motivatedBy
+Definition: The relationship between an
+Annotation and a Motivation that describes
+the reason for the Annotation's creation.
+Domain: oa:Annotation
+Range: oa:Motivation
+|
+|
+oa:hasBody
+IRI: http://www.w3.org/ns/oa#hasBody
+Definition: The object of the relationship is a
+resource that is a body of the Annotation.
+Domain: oa:Annotation
+|
+|
+
+|
+oa:hasBody
+IRI: http://www.w3.org/ns/oa#hasBody
+Definition: The object of the relationship is a
+resource that is a body of the Annotation.
+Domain: oa:Annotation
+|
+|
+bf:contentAccessibility
+Label: Content accessibility note
+URI:
+http://id.loc.gov/ontologies/bibframe/contentAcc
+essibility
+Definition: Information that assists those with a
+sensory impairment for greater understanding
+of content, e.g., captions.
+Comment: Used with Work or Instance
+Range: Literal
+|
+See: Content Accessibility discussion paper
+|
+|
+bf:credits
+Informal note property
+Label: Credits note
+URI:
+http://id.loc.gov/ontologies/bibframe/credits
+Definition: Information in note form of credits
+for persons or organizations who have
+participated in the creation and/or production of
+the resource.
+Comment: Used with Work or Instance.
+Range: Literal
+|
+bib:listingCredits (Named Individual of
+oa:Motivation)
+oa:describing > bib:listing > bib:listingCredits
+Definition: The motivation for when the user
+needs to record information about one or
+multiple agents and their roles in the creation
+and/or production of the resource in one
+literal instead of parsing it out into discrete
+classes and properties.
+|
+|
+bf:awards
+Informal note property
+Label: Award note
+URI:
+http://id.loc.gov/ontologies/bibframe/awards
+Definition: Information on awards associated
+with the described resource.
+Comment: Used with Work or Instance
+Range: Literal
+|
+See recommendation in Object versus
+DataType Properties document.
+notes
+from
+the
+ontology
+call
+on
+2/28:
+Conclusion: postpone for future work, use
+bf:awards, request changes to
+bf:grantingInstitution from LC
+|
+|
+See recommendation in Object versus
+DataType Properties document.
+notes
+from
+the
+ontology
+call
+on
+2/28:
+Conclusion: postpone for future work, use
+bf:awards, request changes to
+bf:grantingInstitution from LC
+|
+|
+bf:natureOfContent
+Informal note property
+Label: Content nature
+URI:
+http://id.loc.gov/ontologies/bibframe/natureOfCo
+ntent
+Definition: Characterization that epitomizes the
+primary content of a resource, e.g., field
+recording of birdsong; combined time series
+analysis and graph plotting system.
+Comment: Used with Work or Instance
+Range: Literal
+|
+bib:specifyingNatureOfContent
+(Named Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingNatureOfContent
+Definition:
+The motivation for when the user
+needs to characterize the primary content of
+the resource.
+|
+|
+bf:editionEnumeration
+Informal note property
+Label: Edition enumeration
+URI:
+http://id.loc.gov/ontologies/bibframe/editionEnu
+meration
+Definition: Enumeration of the edition; usually
+transcribed.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:editionStatement
+Informal note property
+Label: Edition statement
+URI:
+http://id.loc.gov/ontologies/bibframe/editionStat
+ement
+Definition: Information identifying the edition or
+version of the resource and associated
+statements of responsibility for the edition;
+usually transcribed.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:historyOfWork
+Informal note property
+Label: History of the work
+URI:
+http://id.loc.gov/ontologies/bibframe/historyOfW
+ork
+Definition: Information about the history of a
+Work.
+Domain: Work
+Range: Literal
+|
+bib:specifyingHistoryOfWork (Named
+Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingHistoryOfWork
+Definition:
+The motivation for when the user
+needs to record information about the history
+of a work.
+|
+|
+bf:preferredCitation
+Informal note property
+Label: Preferred citation
+URI:
+http://id.loc.gov/ontologies/bibframe/preferredCi
+tation
+Definition: Citation to the resource preferred
+by its custodian of the resource.
+rdfs:comment: Used with Work or Instance
+Range: Literal
+|
+bib:specifyingPreferredCitation
+(Named Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingPreferredCitation
+Definition: The motivation for when the user
+wants to specify a preferred citation for a resource.
+|
+|
+bf:provisionActivityStatement
+Informal note property
+Label: Provider statement
+URI:
+http://id.loc.gov/ontologies/bibframe/provisionAc
+tivityStatement
+Definition: Statement relating to providers of a
+resource; usually transcribed.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Activities document
+|
+|
+bf:responsibilityStatement
+Informal note property
+Label: Creative responsibility statement
+URI:
+http://id.loc.gov/ontologies/bibframe/responsibili
+tyStatement
+Definition: Statement relating to any persons,
+families, or corporate bodies responsible for the
+creation of, or contributing to the content of a
+resource; usually transcribed.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:review
+Label: Review content
+URI: http://id.loc.gov/ontologies/bibframe/review
+Definition: Review of a resource
+Comment: Used with Work or Instance
+Range: Review
+|
+bib:reviewing (Named Individual of
+oa:Motivation)
+oa:assessing > bib:reviewing
+|
+|
+bf:seriesEnumeration
+Informal note property
+Label: Series enumeration
+URI:
+http://id.loc.gov/ontologies/bibframe/seriesEnu
+meration
+Definition: Series enumeration of the resource;
+usually transcribed.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:seriesStatement
+Informal note property
+Label: Series statement
+URI:
+http://id.loc.gov/ontologies/bibframe/seriesState
+ment
+Definition: Statement of the series the
+resource is in; usually transcribed; includes the
+ISSN if applicable.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:subseriesEnumeration
+Informal note property
+Label: Series statement
+URI:
+http://id.loc.gov/ontologies/bibframe/seriesState
+ment
+Definition: Statement of the series the
+resource is in; usually transcribed; includes the
+ISSN if applicable.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:subseriesStatement
+Informal note property
+Label: Subseries statement
+URI:
+http://id.loc.gov/ontologies/bibframe/subseriesS
+tatement
+Definition: Statement of the subseries the
+resource is in; usually transcribed; includes the
+ISSN if applicable.
+Domain: Instance
+Range: Literal
+|
+See recommendation in Object versus
+dataType Property document
+|
+|
+bf:summary
+Informal note property
+Label: Summary content
+URI:
+http://id.loc.gov/ontologies/bibframe/summary
+Definition: Summary or abstract of the
+resource described.
+Domain: Work or Instance
+Range: Literal
+|
+bib:summarizing (Named Individual of
+oa:Motivation)
+oa:describing > bib:summarizing
+Definition: The motivation for when the user
+needs to add a summary or abstract to the
+resource being described.
+|
+|
+bf:systemRequirements
+Informal note property
+Label: Equipment or system requirements
+URI:
+http://id.loc.gov/ontologies/bibframe/systemReq
+uirements
+Definition: Equipment or system requirements
+beyond what is normal and obvious for the type
+of carrier or type of file, such as make and
+model of equipment or hardware, operating
+system, amount of memory, programming
+language, other necessary software, any plugins
+or peripherals required to play, view, or run
+the resource, etc.
+Domain: Instance
+Range: Literal
+|
+bib:specifyingSystemRequirements
+(Named Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingSystemRequirements
+Definition: The motivation for when the user
+needs to record any equipment or system
+requirements beyond what is normal and
+obvious for the type of carrier or type of file.
+|
+|
+bf:tableOfContents
+Informal note property
+Label: Table of contents content
+URI:
+http://id.loc.gov/ontologies/bibframe/tableOfCon
+tents
+Definition: Table of contents of the described
+resource.
+Domain: Work or Instance
+Range: bf:TableOfContents
+|
+bib:specifyingContents (Named
+Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingContents
+bib:linkingTableOfContents (Named
+Individual of oa:Motivation)
+oa:linking > bib:linkingTableOfContents
+|
+|
+bf:custodialHistory
+Informal note property
+Label: Custodial history
+URI:
+http://id.loc.gov/ontologies/bibframe/custodialHi
+story
+Definition: Information about the provenance,
+such as origin, ownership and custodial history
+(chain of custody), of a resource.
+Comment: Used with Work, Instance or Item
+Range: Literal
+|
+bib:specifyingCustodialHistory
+(Named Individual of oa:Motivation)
+oa:describing > bib:specifying >
+bib:specifyingCustodialHistory
+Definition: The motivation for when the user
+needs to record information about the history
+of the resource being described in one literal.
+|
 
 BF2 Approach to Notes
 =====================
