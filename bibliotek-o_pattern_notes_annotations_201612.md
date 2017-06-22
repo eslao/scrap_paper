@@ -148,95 +148,18 @@ please follow links for the most up-to-date details.
 | **BIBFRAME 2.0** | **bibliotek-o** |
 | :--------------- | :-------------- |
 | Involved Classes                   |
-| **bf:Note** <br /> Label: Note <br /> URI: http://id.loc.gov/ontologies/bibframe/Note <br /> Definition: Information, usually in textual form, on attributes of a resource or some aspect of a resource. <br /> SubClass Of: http://www.w3.org/2000/01/rdfschema# <br /> Used with: http://id.loc.gov/ontologies/bibframe/note  <br />  | **oa:Annotation** <br /> URI: http://www.w3.org/ns/oa#Annotation <br /> Required Predicates: oa:hasTarget, rdf:type <br /> Recommended Predicates: oa:hasBody, oa:motivatedBy, dcterms:creator, dcterms:created <br /> Other Predicates: oa:bodyValue, oa:styledBy, dcterms:issued, as:generator |
-bf:Summary
-Label: Summary
-URI:
-http://id.loc.gov/ontologies/bibframe/Summary
-Definition: Description of the content of a
-resource, such as an abstract, summary, etc..
-SubClass Of: http://www.w3.org/2000/01/rdfschema#
-Resource
-Used with:
-http://id.loc.gov/ontologies/bibframe/summary
-|
-bib:summarizing (Named Individual of
-oa:Motivation)
-oa:describing > bib:summarizing
-|
-|
-bf:TableOfContents
-Label: Table of contents
-URI:
-http://id.loc.gov/ontologies/bibframe/TableOfCo
-ntents
-Definition: Table of contents of a resource.
-SubClass Of: http://www.w3.org/2000/01/rdfschema#
-Resource
-Used with:
-http://id.loc.gov/ontologies/bibframe/tableOfCon
-tents
-|
-bib:specifyingContents (Named
-Individual of oa:Motivation)
-oa:describing > bib:specifying >
-bib:specifyingContents
-bib:linkingTableOfContents (Named
-Individual of oa:Motivation)
-oa:linking > bib:linkingTableOfContents
-|
-|
-bf:Review
-Label: Review
-URI:
-http://id.loc.gov/ontologies/bibframe/Review
-Definition: Review of a resource
-SubClass Of: http://www.w3.org/2000/01/rdfschema#
-Resource
-Used with: bf:review
-|
-bib:reviewing (Named Individual of
-oa:Motivation)
-oa:assessing > bib:reviewing
-|
-|
-
-|
-oa:Motivation
-IRI: http://www.w3.org/ns/oa#Motivation
-Sub Class Of: skos:Concept
-Range Of: oa:motivatedBy, oa:hasPurpose
-|
-|
- 
-|
-oa:TextualBody
-IRI: http://www.w3.org/ns/oa#TextualBody
-Equivalent Classes: as:Note
-Required Predicates: rdf:value
-Recommended Predicates: dc:format,
-dc:language, rdf:type
-|
-|
-Involved Properties
-|
-|
-bf:note
-Label: Note
-URI: http://id.loc.gov/ontologies/bibframe/note
-Definition: General textual information relating
-to a resource, such as Information about a
-specific copy of a resource or information about
-a particular attribute of a resource.
-Comment: Used with Unspecified
-Range:
-http://id.loc.gov/ontologies/bibframe/Note
-|
-bib:isTargetOf
-Definition: The relationship between a
-Target and an Annotation
-oa:hasTarget
-IRI: http://www.w3.org/ns/oa#hasTarget
+| **bf:Note** <br /> Label: Note <br /> URI: http://id.loc.gov/ontologies/bibframe/Note <br /> Definition: Information, usually in textual form, on attributes of a resource or some aspect of a resource. <br /> SubClass Of: http://www.w3.org/2000/01/rdfschema# <br /> Used with: http://id.loc.gov/ontologies/bibframe/note  <br />  | **oa:Annotation** <br /> URI: http://www.w3.org/ns/oa#Annotation <br /> Required Predicates: oa:hasTarget, rdf:type <br /> Recommended Predicates: oa:hasBody, oa:motivatedBy, dcterms:creator, dcterms:created <br /> Other Predicates: oa:bodyValue, oa:styledBy, dcterms:issued, as:generator | **bf:Summary** <br /> Label: Summary <br /> URI:
+http://id.loc.gov/ontologies/bibframe/Summary <br /> Definition: Description of the content of a resource, such as an abstract, summary, etc.. <br /> SubClass Of: http://www.w3.org/2000/01/rdfschema#Resource <br /> Used with: http://id.loc.gov/ontologies/bibframe/summary
+| **bib:summarizing (Named Individual of oa:Motivation)** <br /> oa:describing > bib:summarizing |
+| **bf:TableOfContents** <br /> Label: Table of contents <br /> URI: http://id.loc.gov/ontologies/bibframe/TableOfContents <br />  Definition: Table of contents of a resource. <br /> SubClass Of: http://www.w3.org/2000/01/rdfschema#Resource <br /> Used with:
+http://id.loc.gov/ontologies/bibframe/tableOfContents | **bib:specifyingContents (Named Individual of oa:Motivation)**  <br /> oa:describing > bib:specifying > bib:specifyingContents <br /> **bib:linkingTableOfContents (Named Individual of oa:Motivation)** <br /> 
+oa:linking > bib:linkingTableOfContents |
+| **bf:Review** <br /> Label: Review  <br /> URI: http://id.loc.gov/ontologies/bibframe/Review <br /> Definition: Review of a resource <br /> SubClass Of: http://www.w3.org/2000/01/rdfschema#Resource <br /> Used with: bf:review | **bib:reviewing (Named Individual of
+oa:Motivation)** <br /> oa:assessing > bib:reviewing |
+| | **oa:Motivation** <br />  IRI: http://www.w3.org/ns/oa#Motivation <br /> SubClass Of: skos:Concept <br /> Range Of: oa:motivatedBy, oa:hasPurpose|
+| | **oa:TextualBody** <br /> IRI: http://www.w3.org/ns/oa#TextualBody <br /> Equivalent Classes: as:Note <br /> Required Predicates: rdf:value <br /> Recommended Predicates: dc:format, dc:language, rdf:type |
+| Involved Properties                |
+| **bf:note** <br /> Label: Note <br /> URI: http://id.loc.gov/ontologies/bibframe/note <br /> Definition: General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource. <br /> Comment: Used with Unspecified <br /> Range: http://id.loc.gov/ontologies/bibframe/Note | **bib:isTargetOf** <br />  Definition: The relationship between a Target and an Annotation <br /> **oa:hasTarget**  <br /> IRI: http://www.w3.org/ns/oa#hasTarget
 Definition: The relationship between an
 Annotation and its Target.
 Domain: oa:Annotation
